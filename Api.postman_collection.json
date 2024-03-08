@@ -1,0 +1,326 @@
+{
+	"info": {
+		"_postman_id": "3c1e2a30-9dcc-4799-80d4-4ca3672130db",
+		"name": "Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26549493",
+		"_collection_link": "https://www.postman.com/cloudy-shadow-690751/workspace/webservice/collection/26549493-3c1e2a30-9dcc-4799-80d4-4ca3672130db?action=share&source=collection_link&creator=26549493"
+	},
+	"item": [
+		{
+			"name": "Authentification",
+			"item": [
+				{
+					"name": "LogIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"matthieu.bouillot@example.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/login"
+					},
+					"response": []
+				},
+				{
+					"name": "LogAdmin",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWViMTQxMzc3MjRlODliYjNlOTU0OTUiLCJlbWFpbCI6Im1hdHRoaWV1LmJvdWlsbG90QGV4YW1wbGUuY29tIiwiaWF0IjoxNzA5OTEyOTY5LCJleHAiOjE3MDk5MTY1Njl9.azSTOQvGbSQpWeiScVoAgRBMAiclBghdTvRjTZJpa9c"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\": \"javascript\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/skills"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Project",
+			"item": [
+				{
+					"name": "AllProjects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/projects"
+					},
+					"response": []
+				},
+				{
+					"name": "CreateProject",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Projet webservice\",\r\n    \"description\": \"Description du projet webservice\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/projects"
+					},
+					"response": []
+				},
+				{
+					"name": "OneProject",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/projects/65eaf49e711a37b726d34dce"
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProject",
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateProject",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test\",\r\n    \"description\": \"Description du projet webservice\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/projects/65eaf3c8711a37b726d34dcb"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "AllRoles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\": \"Admin\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/roles"
+					},
+					"response": []
+				},
+				{
+					"name": "CreateRole",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\": \"User\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/roles"
+					},
+					"response": []
+				},
+				{
+					"name": "OneRole",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/roles/65eaf9fdd9f8adb2793ebca6"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteRole",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:3000/roles/65eafbb0d9f8adb2793ebcad"
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateRole",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": "http://localhost:3000/roles/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Skill",
+			"item": [
+				{
+					"name": "AllSkills",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/skills"
+					},
+					"response": []
+				},
+				{
+					"name": "CreateSkill",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\": \"VueJs\" }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/skills"
+					},
+					"response": []
+				},
+				{
+					"name": "OneSkill",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/skills/65eb0d76af04bf3df2e8e89a"
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteSkill",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:3000/skills/65eb0da9af04bf3df2e8e89d"
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateSkill",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": "http://localhost:3000/skills/65eb0da9af04bf3df2e8e89d"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "AllUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/users"
+					},
+					"response": []
+				},
+				{
+					"name": "CreateUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Matthieu\",\r\n    \"lastName\": \"BOUILLOT\",\r\n    \"email\": \"matthieu.bouillot@example.com\",\r\n    \"roleId\": \"NEW_ROLE_ID\" // Remplacez NEW_ROLE_ID par le nouvel ID de rôle\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/users"
+					},
+					"response": []
+				},
+				{
+					"name": "OneUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/users/65eb14137724e89bb3e95495"
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:3000/users/65eb14797724e89bb3e9549b"
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"tulutu\",\r\n    \"lastName\": \"tyty\",\r\n    \"email\": \"tulutu.tyty@example.com\",\r\n    \"roleId\": \"65eafaa2d9f8adb2793ebca9\" \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/users/65eb142d7724e89bb3e95497"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
